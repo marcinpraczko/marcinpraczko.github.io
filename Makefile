@@ -3,4 +3,5 @@ sync-website-to-doc-folder:
 		--exclude='__pycache__' \
 		--exclude='to_review' \
 		--exclude='.doctrees' \
-		website/source/ docs/
+		website/build/html/ docs/
+	touch docs/.nojekyll
