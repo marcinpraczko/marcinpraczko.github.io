@@ -1,0 +1,7 @@
+*~
+venv/
+build/doctrees/
+build/html/
+.doctrees/
+__pycache__/
+_website/
