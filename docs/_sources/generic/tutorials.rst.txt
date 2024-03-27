@@ -8,4 +8,4 @@ The beauty is in flexibility; mini tutorials can evolve into in-depth ones in th
    :maxdepth: 2
    :caption: Mini tutorials:
 
-   index
+   tutorials_mini_index

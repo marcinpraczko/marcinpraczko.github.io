@@ -1,2 +1,5 @@
 sync-website-to-doc-folder:
-	rsync -av --delete --filter='P .nojekyll' website/build/html/ docs/
+	rsync -av --delete \
+		--filter='P .nojekyll' \
+		--filter='P CNAME' \
+		website/build/html/ docs/
