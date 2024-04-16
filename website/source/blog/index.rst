@@ -15,3 +15,13 @@ This section is having details about blog which is created.
    :list-style: none
    :excerpts:
    :expand: Read more ...
+
+
+All Posts
+---------
+
+.. postlist::
+   :author: marcinpraczko
+   :date: %Y-%m-%d
+   :format: {date} - {title}
+   :list-style: circle

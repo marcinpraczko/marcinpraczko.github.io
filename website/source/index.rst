@@ -43,10 +43,11 @@ Blog
 
    blog/index
 
+Blog - Last 5 posts
++++++++++++++++++++
+
 .. postlist:: 5
    :author: marcinpraczko
    :date: %Y-%m-%d
    :format: {date} - {title}
    :list-style: circle
-
-
