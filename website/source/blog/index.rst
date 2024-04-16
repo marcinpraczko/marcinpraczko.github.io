@@ -1,8 +1,7 @@
 Blog
 ====
 
-This is a main section of blog.
-
+Welcome to my blog - I hope you'll discover valuable articles within this section.
 
 Recent Posts
 ------------
@@ -15,3 +14,4 @@ This section is having details about blog which is created.
    :format: {date} - {title}
    :list-style: none
    :excerpts:
+   :expand: Read more ...

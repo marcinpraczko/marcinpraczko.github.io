@@ -42,3 +42,11 @@ Blog
    :maxdepth: 2
 
    blog/index
+
+.. postlist:: 5
+   :author: marcinpraczko
+   :date: %Y-%m-%d
+   :format: {date} - {title}
+   :list-style: circle
+
+

@@ -5,3 +5,6 @@ build/html/
 .doctrees/
 __pycache__/
 _website/
+
+/website-to-sort
+
