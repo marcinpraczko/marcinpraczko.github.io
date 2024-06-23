@@ -1,4 +1,3 @@
-
 Emacs Fuzzy searching in buffer
 ===============================
 
