@@ -6,5 +6,6 @@ build/html/
 __pycache__/
 _website/
 
+/website/build/
+/website/source/to_review/
 /website-to-sort
-
