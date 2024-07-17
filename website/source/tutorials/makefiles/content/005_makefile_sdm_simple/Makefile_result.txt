@@ -1,0 +1,11 @@
+usage: make [target] ...
+
+Targets:
+========
+help                  Help             Show this help message
+bump-ver-patch        Helper           Bump version - patch level
+validate              Validate         Run ansible-lint validator
+validate-all          Validate         Run all validation scripts
+galaxy-install        Ansible-galaxy   Install roles
+galaxy-remove         Ansible-galaxy   Remove roles
+clean                 Clean            Clean all temporary files

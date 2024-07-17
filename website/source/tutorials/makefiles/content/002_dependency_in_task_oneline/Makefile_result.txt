@@ -1,0 +1,8 @@
+STEP: Setup server
+STEP: Install and start BIND
+STEP: Configure DNS zones
+STEP: Install and start NGINX
+STEP: Configure page in WEB server
+STEP: Use LestEncrypt
+STEP: Configure CSR details (auto by LetsEncrypt)
+STEP: Configure Secure Page

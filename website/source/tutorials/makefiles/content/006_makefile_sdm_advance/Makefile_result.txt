@@ -1,0 +1,21 @@
+
+ General
+
+    make [32mhelp                          [m  Help: Show this help text
+    make [32mdisplay-info-file             [m  Display INFO file
+
+ Helper
+
+    make [32mbump-ver-patch                [m  Bump version - patch level
+    make [32mclean                         [m  Clean: Clean all temporary files
+
+ Validate
+
+    make [32mvalidate                      [m  Run ansible-lint validator
+    make [32mvalidate-all                  [m  Run all validation scripts
+
+ Operations
+
+    make [32mgalaxy-install                [m  Ansible-galaxy: Install roles
+    make [32mgalaxy-remove                 [m  Ansible-galaxy: Remove roles
+

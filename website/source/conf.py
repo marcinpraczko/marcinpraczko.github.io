@@ -16,9 +16,10 @@ release = '0.1.0'
 
 extensions = [
     "ablog",
+    "sphinx_panels",
+    "sphinx_tabs.tabs",
     "sphinx.ext.intersphinx",
     "sphinx.ext.todo",
-    "sphinx_panels",
 ]
 
 html_theme = "pydata_sphinx_theme"
@@ -49,7 +50,7 @@ html_sidebars = {
 # Display todos by setting to True
 todo_include_todos = True
 todo_emit_warnings = True
-
+todo_link_only = True
 
 # Exclude folders
 exclude_patterns = ['to_review']
