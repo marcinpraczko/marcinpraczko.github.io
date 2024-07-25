@@ -51,8 +51,10 @@ pip-install-dependencies: ## Install PIP dependencies
 sync-website-to-doc-folder: ## Sync the website build to the docs folder
 		@echo "Syncing website build to docs folder"
 		rsync -av --delete \
-			--filter='P .nojekyll' \
 			--filter='P CNAME' \
+			--include='.*' \
+			--include='*/' \
+			--exclude='*' \
 			website/build/html/ docs/
 
 ##

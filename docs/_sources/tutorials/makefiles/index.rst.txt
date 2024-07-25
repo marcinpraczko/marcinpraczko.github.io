@@ -2,6 +2,8 @@
    pair: tutorial; makefile
    pair: makefile; tricks and tips
 
+.. _makefile_tricks_and_tips:
+
 MPOSL Makefile - Tricks and Tips
 ================================
 
