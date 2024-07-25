@@ -26,6 +26,24 @@ help:: ## Help: Show this help text
 .DEFAULT_GOAL := help
 
 ##
+## Development
+##
+pip-update-all: ## Update pip and requirements.txt
+pip-update-all: pip-update-pip pip-install-dependencies
+
+pip-update-requirements: ## Update requirements.txt
+		@echo "Updating requirements.txt"
+		pip freeze > requirements.txt
+
+pip-update-pip: ## Update pip package
+		@echo "Updating pip"
+		pip install --upgrade pip
+
+pip-install-dependencies: ## Install PIP dependencies
+		@echo "Installing dependencies"
+		pip install -r requirements.txt
+
+##
 ## Publishing
 ##
 
