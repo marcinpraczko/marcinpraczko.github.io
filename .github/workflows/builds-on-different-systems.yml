@@ -22,12 +22,18 @@ jobs:
 
     - name: Install make on Ubuntu
       if: matrix.os == 'ubuntu-latest'
-      run: sudo apt-get install -y make
+      run: |
+        sudo apt-get install -y make
+        make --version
 
     - name: Install make on macOS
       if: matrix.os == 'macos-latest'
-      run: brew install make
+      run: |
+        brew install make
+        make --version
 
     - name: Install make on Windows
       if: matrix.os == 'windows-latest'
-      run: choco install make
+      run: |
+        choco install make
+        make --version
