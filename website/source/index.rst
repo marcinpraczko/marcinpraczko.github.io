@@ -31,6 +31,7 @@ And blog as separate page.
    :maxdepth: 2
    :caption: Main section:
 
+   generic/genai
    tutorials/tutorials
    generic/aboutme
 
