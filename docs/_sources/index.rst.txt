@@ -31,7 +31,8 @@ And blog as separate page.
    :maxdepth: 2
    :caption: Main section:
 
-   generic/tutorials
+   generic/genai
+   tutorials/tutorials
    generic/aboutme
 
 
@@ -51,3 +52,10 @@ Blog - Last 5 posts
    :date: %Y-%m-%d
    :format: {date} - {title}
    :list-style: circle
+
+
+Indexes and search
+------------------
+
+* :ref:`genindex`
+* :ref:`search`

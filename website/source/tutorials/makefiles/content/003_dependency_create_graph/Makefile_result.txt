@@ -1,0 +1,5 @@
+STEP: Create stacic Page
+STEP: Upload static page to Nginx
+STEP: Install Nginx
+STEP: Run Nginx
+STEP: Display page

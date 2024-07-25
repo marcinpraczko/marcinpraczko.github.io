@@ -1,4 +1,4 @@
-name: Testing running builds
+name: Testing builds on different systems
 
 on:
   push:

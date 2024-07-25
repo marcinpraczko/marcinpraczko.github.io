@@ -1,0 +1,17 @@
+# ============================================================================
+# This make file is having spaces instead of tabs, which will not work
+# This was done by purpose to show how Makefile should not look like
+# ============================================================================
+
+.PHONY: help
+help: ## Help: Show this help message
+	@echo 'usage: make [target] ...'
+	@echo
+	@echo 'Targets:'
+	@echo '========'
+	@egrep '^(.+)\:\ ##\ (.+)' ${MAKEFILE_LIST} | column -t -c 2 -s ':#'
+
+
+.PHONY: bump-ver-patch
+bump-ver-patch: ## Helper: Bump version - patch level
+	bumpversion patch
