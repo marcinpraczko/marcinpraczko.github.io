@@ -18,6 +18,7 @@ extensions = [
     "ablog",
     "sphinx_panels",
     "sphinx_tabs.tabs",
+    "sphinx.ext.githubpages", 
     "sphinx.ext.intersphinx",
     "sphinx.ext.todo",
 ]
