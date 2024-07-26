@@ -54,7 +54,6 @@ sync-website-to-doc-folder: ## Sync the website build to the docs folder
 			--filter='P CNAME' \
 			--include='.*' \
 			--include='*/' \
-			--exclude='*' \
 			website/build/html/ docs/
 
 ##
