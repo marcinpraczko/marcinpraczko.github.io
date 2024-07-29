@@ -58,7 +58,10 @@ jobs:
         make -C website clean html
 
     - name: Upload documentation artifact
-      uses: actions/upload-artifact@v3
+      uses: actions/upload-artifact@v4
       with:
         name: page-${{ github.run_number }}
         path: website/build/html/
+
+# TODO: Add a job to deploy the documentation to GitHub Pages
+# Use this: https://github.com/actions/deploy-pages
