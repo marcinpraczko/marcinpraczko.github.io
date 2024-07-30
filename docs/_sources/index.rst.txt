@@ -20,7 +20,6 @@ to DevOps and DevSecOps principles and processes.
 Get ready to immerse yourself in a world where learning meets enjoyment, and efficiency meets exploration.
 Let's embark on this exciting journey together!
 
-
 General section
 ---------------
 
