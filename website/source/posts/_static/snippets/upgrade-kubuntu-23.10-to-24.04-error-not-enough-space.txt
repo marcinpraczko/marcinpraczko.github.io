@@ -1,7 +1,3 @@
-Calculating the changes
-
-Calculating the changes
-
 Not enough free disk space
 
 The upgrade has aborted. The upgrade needs a total of 5 170 M free

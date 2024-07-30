@@ -1,4 +1,5 @@
 # Details for ubuntu 23.10 (part of the output from the neofetch command)
+OS       : Kubuntu 23.10 x86_64
 Kernel   : 6.5.0-44-generic
 Packages : 3446 (dpkg), 11 (snap)
 Shell    : bash 5.2.15

@@ -1,0 +1,6 @@
+# Details for ubuntu 24.04 (part of the output from the neofetch command)
+OS       : Kubuntu 24.04 (LTS x86_64)
+Kernel   : 6.8.0-39-generic
+Packages : 3670 (dpkg), 12 (snap)
+Shell    : bash 5.2.21
+DE       : Plasma 5.27.11

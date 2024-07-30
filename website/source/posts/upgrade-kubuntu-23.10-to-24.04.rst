@@ -1,11 +1,7 @@
-Upgrade Kubuntu 23.10 to 24.04
-==============================
+How to Upgrade Kubuntu 23.10 to 24.04
+=====================================
 
-.. TODO: Please move this date after `post` directive and update it accordingly.
-..       Without moving this document is a draft.
-..       https://ablog.readthedocs.io/en/stable/manual/forever-draft.html
-.. Jul 27, 2024
-.. post::
+.. post:: Jul 27, 2024
    :tags: new post, updateme
    :category: Sysadmin
    :author: Marcin Prączko
@@ -27,7 +23,13 @@ hoping to make your upgrade journey smoother and more successful.
 
 Some links which I've used during the upgrade process can be found in :ref:`upgrade-kubuntu-23.10-to-24.04-resources` section below:
 
-I have really hope that this post will be valuable for you during the upgrade process of your ``Kubuntu`` system.
+- Please check issues which I had during the upgrade process and how I've solved them.
+- I've you're thinking that you won't have those issues during the upgrade process, please try follow steps
+  from :ref:`upgrade-kubuntu-23.10-to-24.04-resources` section.
+
+.. note::
+
+  I have really hope that this post will be valuable for you during the upgrade process of your ``Kubuntu`` system.
 
 Short Summary
 -------------
@@ -38,8 +40,8 @@ You can expect the following:
 
 - Preparation steps before the upgrade.
 - How to move the snap folder to another partition *(related with the challenges of not having enough free space on the root partition)*
-- Suprises during working from terminal (no wifi)
-- Some issues after the upgrade.
+- Suprises during working from terminal (no WIFI)
+- Some minor issues after the upgrade.
 
 Challenges before the upgrade
 -----------------------------
@@ -54,21 +56,20 @@ Reason of so small root partition was that I have separate partition for major f
 Long time ago I've decided to have separate partitions for major folders based on my experience and recommendations from the internet.
 However, it looks like those days are long gone, as I can see that having a ``20GB`` root partition today is not enough, which is really surprising to me.
 
-I had to find a solution to free up some space.
 
 Upgrade process - initial steps
 -------------------------------
 
-Fist I wanted to check major details about my operating system, so following is a part of the output from the ``neofetch`` command:
+Fistly I wanted to check major details about my operating system, so following is a part of the output from the ``neofetch`` command:
 
 .. literalinclude:: _static/snippets/upgrade-kubuntu-23.10-to-24.04-neofetch01.txt
   :language: text
 
-Second I confirmed that I want to do upgrade from terminal or console running under KDE Plasma.
+Secondly I decided that I want to do upgrade from terminal or console running under KDE Plasma.
 
 .. important::
 
-  Finally commands below has been run on console in KDE Plasma (which means on GUI and not in terminal).
+  Finally commands below has been run on console in KDE Plasma (which means on GUI).
 
 Intitial commands
 +++++++++++++++++
@@ -85,11 +86,11 @@ Following commands were used to start the upgrade process:
 
 Above commands worked without any issues.
 
-Following command suprised me with many details related with the upgrade process and distribution
+Following command suprised me with many details about distribution.
 
-.. info::
+.. note::
 
-    That was first time in my live when I've done upgrade process on ``Ubuntu/Kubuntu``.
+    That was first time in my live when I've done distribution upgrade process on ``Ubuntu/Kubuntu``.
 
 .. code-block:: bash
 
@@ -101,7 +102,7 @@ And this displayed the following message:
 .. literalinclude:: _static/snippets/upgrade-kubuntu-23.10-to-24.04-first-message.txt
   :language: text
 
-.. info::
+.. note::
 
   I liked that on above message there were clear informations about:
 
@@ -115,7 +116,7 @@ And as expected ... first error appeared.
 First error - not enough free space
 +++++++++++++++++++++++++++++++++++
 
-After confirming the upgrade process (by pressing ``Y``) I got the following error:
+As expected :). After confirming the upgrade process (by pressing ``Y``) I got the following error:
 
 .. error::
 
@@ -134,13 +135,13 @@ This can be done with the following command:
     # Show disk usage of the root partition
     ncdu -x /
 
-This command will show you the disk usage of the root partition in nice and interactive way.
+This command will show the disk usage of the root partition in nice and interactive way.
 
 In command above:
 
 - ``-x`` - is used to exclude other filesystems. This is important as I have separate partitions for major folders.
 
-What was a suprise for me was that the ``/var/lib/snapd/`` folder was taking more than ``5GB (5.1GB)`` of space.
+What was a suprise for me that the ``/var/lib/snapd/`` folder was using more than ``5GB (5.1GB)`` of space.
 
 .. hint::
 
@@ -149,15 +150,16 @@ What was a suprise for me was that the ``/var/lib/snapd/`` folder was taking mor
   - Snap packages are self-contained and work across a range of Linux distributions.
     They are easy to install, secure, and up-to-date.
   - Snap packages are stored in the ``/var/lib/snapd/`` folder (Default location).
+  - More details about snap can be found in the :ref:`upgrade-kubuntu-23.10-to-24.04-resources` section.
 
 .. note::
 
   - I belive that ``snap`` is a great tool, however it is consuming so much space.
-  - And not sure why this is not using ``/usr/local`` or ``/opt`` instead of root partition.
+  - And not sure why it is not using ``/usr/local`` or ``/opt`` partition only ``/var/lib``.
 
 
-Incrasing free space - moving snap folder
-+++++++++++++++++++++++++++++++++++++++++
+Increasing free space - moving snap folder
+++++++++++++++++++++++++++++++++++++++++++
 
 Investigation showed that from my ``20GB`` root partition, the ``/var/lib/snapd/`` folder was taking more than ``5GB`` of space,
 which is ``25%`` of the total space. This was a lot of space for me.
@@ -222,7 +224,7 @@ After collecting enough documents and installing required software, I was ready 
   who -r
   # >> run-level 3
 
-2. Tried to check internet (good practice from my old days)
+2. Tried to check whether connection with Internet works (good practice from my old days as sysadmin)
 
 I wanted be sure that working with ``Links`` is possible, so I've tried to open some website by running ``links``, and ...
 
@@ -236,7 +238,7 @@ I wanted be sure that working with ``Links`` is possible, so I've tried to open 
 
 .. important::
 
-  - That was really suprise for me - I was not able to use internet easily in terminal.
+  - That was really suprise for me - I was not able to use Internet easily in terminal.
   - On my old days as sysadmin ``WIFI`` (networking) was runing on ``multi-user`` mode (run-level 3) and not on GUI.
 
 .. tip::
@@ -247,168 +249,216 @@ I wanted be sure that working with ``Links`` is possible, so I've tried to open 
 
   - Above information comes from ``Chat GPT`` when asked about ``multi-user.target``.
 
+That was too much errors for me - had no time to try setup ``WIFI`` on console.
+I've decided to move ``/var/lib/snapd/`` folder from GUI (with WIFI working).
 
-That was too much errors for me - had no time to try setup ``WIFI`` on console. I've decided to reboot and move ``/var/lib/snapd/``
-from GUI (With WIFI)
+.. code-block:: bash
 
-.. note::
+  # Switch back to GUI
+  sudo systemctl isolate graphical.target
 
-  - Of course, I could return to the GUI without rebooting. However, I had done some extra steps in the terminal
-    and was no longer happy to revert them in the terminal, so I decided to reboot. (I know — I gave up too early)
+Adjust plan - moving snap folder from GUI
++++++++++++++++++++++++++++++++++++++++++
 
-TODO
-----
+After logging back into the GUI, I've created new plan:
 
-.. todo::
+- Stop snap services and unmount snap folders
+- Move snap folder to another partition
+- Run upgrade process again
+- After distro upgrade - reboot is recommended
+- Check if everything is working fine after upgrade and reboot
 
-    - [ ] Related with task in ORG: ``112`` - ``Main Backlog``
-    - Add details what I've done to fix the issue.
-    - Try describe process as best as possible.
 
-
-Snpa moving - GUI
-+++++++++++++++++
+Moving snap folder - in GUI
++++++++++++++++++++++++++++
 
 .. note::
 
   - I have hope that one day I will write some tutorial about safe process of moving snap folder to another partition.
-  - For this post I will describe only steps which I've done (And worked)
+  - For this post I will describe only steps which I've done which worked for me.
+  - I was not familiar with snap configuration, however I trusted my experience and knowledge that I can manage this ...
+    *(Dealing with advance configuration for Linux filesystem, partitions and folders
+    was something which I was done a lot in past)*
+
+So I've started with following steps:
+
+1. Close all GUI applications (like ``Firefox``) which has been installed via snap (command ``snap list`` can help).
+2. Leave open only console
+3. Stop snap services
+
+.. code-block:: bash
+
+  sudo systemctl stop snapd
+  sudo systemctl stop snapd.socket
+
+4. Unmount snap folders
+
+.. code-block:: bash
+
+  for mount in $(mount | grep /snap | awk '{print $3}'); do
+      sudo umount $mount
+  done
+
+5. Stop snapd-ns.mount
+
+.. code-block:: bash
+
+  sudo systemctl stop run-snapd-ns.mount
+
+6. Verify that snap folders are unmounted
+
+.. code-block:: bash
+
+  mount | grep snap
+  # Should not return anything
+
+7. Create folder on another partition
+
+.. code-block:: bash
+
+  # Create folder on another partition
+  sudo mkdir -vp /mnt/myworkspace/system-mounts-temporary/var-lib-snapd
+
+8. Copy snap folder to another partition
+
+- Below command will make sure to preserve all attributes of files and directories.
+
+.. code-block:: bash
+
+  # Rsync - copy files from one location to another
+  rsync -aAX --info=progress2 /var/lib/snapd/ /mnt/myworkspace/system-mounts-temporary/var-lib-snapd/
+
+  # Force sync (dump data to disks) - to be sure that everything is copied
+  sync
+
+9. Temporary rename snap folder
+
+- Following steps allows revert changes if something goes wrong.
+
+.. code-block:: bash
+
+  # Rename old snap folder (Moving to another partition)
+  sudo mv -v /var/lib/snapd/ /mnt/myworkspace/system-mounts-temporary/var-lib-snapd-old
+
+  # Create new snap folder
+  sudo mkdir -vp /var/lib/snapd/
+
+10. Add new entry to ``/etc/fstab``
+
+.. code-block:: text
+
+  # 2024-07-28 - Moved /var/lib/snapd to /mnt/myworkspace/system-mounts-temporary/var-lib-snapd
+  /mnt/myworkspace/system-mounts-temporary/var-lib-snapd  /var/lib/snapd  none    auto,bind       0       2
+
+- Above entry will make sure that snap folder will be mounted with ``bind`` option.
+
+11. Mount snap folder
+
+.. code-block:: bash
+
+  # Make sure that sytem is aware of new entry in /etc/fstab
+  sudo systemctl daemon-reload
+
+  # Mount snap folder
+  sudo mount /var/lib/snapd/
+
+12. Start snapd services
+
+.. warning::
+
+  - I've tried to run following commands - however this failed with errors during mount.
+  - Not sure why - didn't try to investigate this.
+
+  .. code-block:: bash
+
+    sudo systemctl start snapd
+    sudo systemctl start snapd.socket
+
+13. Reboot system
+
+- So I've decided to reboot the system. And was wondering whether my system will boot and run...
+
+Upgrade process - final steps
+-----------------------------
+
+After rebooting the system, everything was working fine for me:
+
+- Linux started
+- GUI started
+- Snap services started and were working fine
+- Snap applications were working fine
+
+Re-runnig upgrade process
+
+.. code-block:: bash
+
+  # Start the upgrade process
+  sudo do-release-upgrade
+
+.. note::
+
+  - This time upgrade process started without any issues.
+  - I've been informed that upgrade can take some time to finish
+
+And after some time, the upgrade process was completed successfully.
+*(This took around 2 hours on my laptop)*
+
+So now.. that was the most scary part - rebooting the system after upgrade (no easy rollback)
 
 
+System upgraded - welcome to Kubuntu 24.04
+------------------------------------------
+
+Lucky for me - after rebooting the system, everything was working fine. :) 
+
+And following is result from the ``neofetch`` command:
+
+.. literalinclude:: _static/snippets/upgrade-kubuntu-23.10-to-24.04-neofetch02.txt
+  :language: text
+
+Removal of old snapd data
+-------------------------
+
+Once system was up and running, I've decided to remove old snapd data, no longer needed as snap was working with new location.
+
+.. code-block:: bash
+
+  # Remove old snapd data
+  sudo rm -Rf /mnt/myworkspace/system-mounts-temporary/var-lib-snapd-old
 
 
+Noticable issues after upgrade
+------------------------------
 
-.. Place your content here and replace this text.
+Mostly everything was working fine and I started working on my laptop as usual.
+However following are minor issues which I've noticed:
 
-Steps (directy)
----------------
+- Python ``venv`` stopped working
 
+  - In some projects I needed to recreate python virutal environments (venv)
+  
+    - they stopped working
+    - re-sourcing venv ``source venv/bin/activate`` - not worked
 
-Stop snap
-+++++++++
+- Running ``Emacs`` fist time after upgrade
 
-Migrate: snap:
+  - ``Emacs`` started consuming a lot of CPU
+  - That was related with recompliation of packages during first run
+  - This was resolved after above task was completed
 
-sudo systemctl stop snapd
-sudo systemctl stop snapd.socket
+Summary
+-------
 
-for mount in $(mount | grep /snap | awk '{print $3}'); do
-    sudo umount $mount
-done
+In this post, I've described the steps I took to upgrade my laptop from ``Kubuntu 23.10`` to ``Kubuntu 24.04``.
+There were some challenges along the way, but I was able to overcome them and complete the upgrade successfully.
 
-sudo systemctl stop run-snapd-ns.mount (Looks like this helped stopped all mounted snaps)
+I've learned:
 
-Migration
-+++++++++
+- Linux (``Kubuntu`` in this case) changed a lot in last years comparing with my past experience.
+- Snap is a great tool, but it can consume a lot of space.
+- Snap design doesn't work with ``symlinks`` to another partition - mount with ``bind`` worked for me.
 
-- close firefox
-- leave only console / tmux
-
-# Add creation of folder
-# OLD: mv -v /var/lib/snapd/* var-lib-snapd/
-# Instead `mv -v` maybe one should use `rsync -aAX --info=progress2`
-# CUR:
-# rsync -aAX --info=progress2
-# sync
-# mv /var/lib/snapd/ /var/lib/snapd-old
-# mkdir /var/lib/snapd/
-# uncomment /etc/fstab
-# Warning without command below
-# systemctl daemon-reload
-# mount /var/lib/snapd/ - Worked
-# starting snapd - didn't work
-# reboot
-# everything seems be working fine
-
-
-Update /etc/fstab - make sure that myworkspace is mount before snap
-
-.. todo::
-
-   Find commmands here - which I've run to check dependecies (tree / mount FS)
-
-rm -Rf /var/lib/snapd-old (relased free space)
-
-
-Everything seems be working now:
-
-
-
-Screenshot
-----------
-
-Following screenshot shows the fuzzy search in action:
-
-.. todo::
-
-  - [ ] Add screenshot from neofetch  - Sort those images
-
-- 23.10
-
-.. image:: upgrade-kubuntu-neofetch-23-10.png
-  :width: 512
-  :alt: upgrade-kubuntu-neofetch-23-10.png
-
-- 24.04
-
-.. image:: upgrade-kubuntu-neofetch-24-04.png
-  :width: 512
-  :alt: upgrade-kubuntu-neofetch-24-04.png
-
-
-.. todo::
-
-  - Move this to another place - maybe to the top of the post
-
-Issues
-------
-
-Looks like python venv stopped working
-
-Python 3.12 become default
-++++++++++++++++++++++++++
-
-- Python 3.12 become default
-- Looks like required to recreate venvs (at lest for this page)
-
-
-
-Emacs
-+++++
-
-There is also issue with emacs - looks like I need to recompile it.
-Looks like ``Emacs`` started dispalying warning messages.
-
-- Emacs started consuming a lot of CPU
-
-`M-x List-Packages` - Press `U` anx `x` - to update all packages
-
-
-First time run - triggers some compilation of packages.
-
-
-Compiling /usr/share/emacs/29.3/lisp/mail/mailheader.el.gz...
-uncompressing mailheader.el.gz...
-uncompressing mailheader.el.gz...done
-Compiling /usr/share/emacs/29.3/lisp/gnus/gmm-utils.el.gz...
-uncompressing gmm-utils.el.gz...
-uncompressing gmm-utils.el.gz...done
-Compiling /usr/share/emacs/29.3/lisp/mail/mailabbrev.el.gz...
-uncompressing mailabbrev.el.gz...
-uncompressing mailabbrev.el.gz...done
-Compiling /usr/share/emacs/29.3/lisp/mail/ietf-drums.el.gz...
-uncompressing ietf-drums.el.gz...
-uncompressing ietf-drums.el.gz...done
-Compiling /usr/share/emacs/29.3/lisp/mail/rfc2045.el.gz...
-uncompressing rfc2045.el.gz...
-uncompressing rfc2045.el.gz...done
-
-
-In `Async-native-complie-log` - what is this?
-
-
-- Nice https://www.emacswiki.org/emacs/InstallingPackages
-- `list-packages` - `/s` Installed - Shows installed packages
+I have really hope that this post helped you during the upgrade process of your ``Kubuntu`` system.
 
 .. _upgrade-kubuntu-23.10-to-24.04-resources:
 
@@ -418,9 +468,10 @@ Resources
 Ubuntu / Kubuntu
 ++++++++++++++++
 
+Following links are related with the upgrade process to ``Kubuntu 24.04``:
+
 - `Ubuntu.com - Kubuntu Release Notes <https://wiki.ubuntu.com/NobleNumbat/ReleaseNotes/Kubuntu>`_
-- `Ubuntu.com - Kubuntu Upgrade Instructions <https://help.ubuntu.com/community/NobleUpgrades/Kubuntu>`_ - Here are instructions (I followed this)
-- `Askubuntu.com - Upgrade via Command Line <https://askubuntu.com/questions/442290/how-can-i-upgrade-major-kubuntu-versions-by-command-line>`_
+- `Ubuntu.com - Kubuntu Upgrade Instructions <https://help.ubuntu.com/community/NobleUpgrades/Kubuntu>`_
 - `Linuxconfig.org - Step-by-Step Howto Guide <https://linuxconfig.org/ubuntu-upgrade-to-24-04-noble-numbat-a-step-by-step-howto-guide>`_
 
 Others
@@ -429,3 +480,4 @@ Others
 - `Snap - docs <https://snapcraft.io/docs>`_
 - `Askubuntu.com - How to deal with snap using a lot of storage space <https://askubuntu.com/questions/1335229/how-to-deal-with-snap-using-a-lot-of-storage-space>`_
   *(Comments on this says - that 20GB is not enough when SNAP is used)*
+
