@@ -1,0 +1,12 @@
+# Command snap list
+Name               Rev    Tracking         Publisher   Notes
+bare               5      latest/stable    canonical✓  base
+code               164    latest/stable    vscode✓     classic
+codium             394    latest/stable    vscodium    classic
+core18             2829   latest/stable    canonical✓  base
+core20             2318   latest/stable    canonical✓  base
+core22             1380   latest/stable    canonical✓  base
+firefox            4539   latest/stable/…  mozilla✓    -
+gnome-42-2204      176    latest/stable/…  canonical✓  -
+gtk-common-themes  1535   latest/stable/…  canonical✓  -
+snapd              21759  latest/stable    canonical✓  snapd

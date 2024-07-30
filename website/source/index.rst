@@ -21,13 +21,13 @@ Get ready to immerse yourself in a world where learning meets enjoyment, and eff
 Let's embark on this exciting journey together!
 
 TODO-TODEL
+----------
 
 .. todo::
 
    Remove this before publishing.
 
 :ref:`blog-drafts`
-
 
 General section
 ---------------
