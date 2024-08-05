@@ -1,7 +1,11 @@
 {{ title }}
 {{ "=" * title|length }}
 
-.. post:: {{ date }}
+.. TODO: Please move this date after `post` directive and update it accordingly.
+..       Without moving this document is a draft.
+..       https://ablog.readthedocs.io/en/stable/manual/forever-draft.html
+.. {{ date }}
+.. post:: 
    :tags: {{ tags }}
    :category: {{ category }}
    :author: {{ author }}

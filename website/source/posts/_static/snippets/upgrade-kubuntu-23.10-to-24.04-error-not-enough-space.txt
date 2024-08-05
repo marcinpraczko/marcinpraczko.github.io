@@ -1,0 +1,6 @@
+Not enough free disk space
+
+The upgrade has aborted. The upgrade needs a total of 5 170 M free
+space on disk '/'. Please free at least an additional 4 994 M of disk
+space on '/'. Empty your trash and remove temporary packages of
+former installations using 'sudo apt-get clean'.
