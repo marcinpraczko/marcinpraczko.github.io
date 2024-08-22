@@ -32,6 +32,7 @@ And blog as separate page.
 
    generic/genai
    tutorials/tutorials
+   kb/index
    generic/aboutme
 
 
