@@ -1,0 +1,81 @@
+pipeline {
+    options {
+        disableConcurrentBuilds()
+        skipDefaultCheckout(true)
+    }
+
+    agent {
+        node {
+            label "custom-label"
+        }
+    }
+
+    post {
+        always {
+            script {
+                try {
+                    sh "docker-compose rm -fsv"
+                } catch (e) {
+                    echo "error in removing acceptance test containers"
+                }
+            }
+            deleteDir()
+        }
+    }
+
+    stages {
+        stage('Checkout SCM') {
+            steps {
+              echo 'Checking code in agent'
+              checkout scm
+            }
+        }
+
+        stage('Report / Check Environment') {
+            parallel {
+                stage('Details about builds') {
+                    steps {
+                        echo "Running ${env.BUILD_ID} on ${env.JENKINS_URL}"
+                    }
+                }
+                stage('Dummy: Lint 01') {
+                    steps {
+                        echo 'Lint 01'
+                    }
+                }
+                stage('Dummy: Lint 02') {
+                    steps {
+                        echo 'Lint 02'
+                    }
+                }
+            }
+        }
+
+        stage("Run stack") {
+            steps {
+                echo "Starting stacks"
+                sh "docker-compose up -d"
+                sh "docker-compose ps"
+            }
+        }
+
+        stage("Test containers with goss") {
+            parallel {
+                stage('Testing on nginx01-test01') {
+                    steps {
+                        echo "Check goss:"
+                        sh "docker exec nginx01-test01 ls -la /goss_tests/"
+                        sh "docker exec nginx01-test01 /goss/goss -g /goss_tests/nginx_default.yaml validate --color --format tap"
+                    }
+                }
+                stage('Testing on nginx02-test01') {
+                    steps {
+                        echo "Check goss:"
+                        sh "docker exec nginx02-test01 ls -la /goss"
+                        sh "docker exec nginx02-test01 /goss/goss -g /goss_tests/nginx_default.yaml validate --color --format tap"
+                    }
+                }
+            }
+        }
+    }
+}

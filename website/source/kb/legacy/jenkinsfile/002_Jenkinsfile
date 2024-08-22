@@ -1,0 +1,52 @@
+#!groovy
+
+pipeline {
+
+    agent {
+        node {
+            label "custom-label"
+        }
+    }
+
+    // cleanup and notifications (for each agent)
+    post {
+        always {
+            deleteDir()
+        }
+    }
+
+    options {
+        disableConcurrentBuilds()
+    }
+
+    stages {
+        // Echo Environment
+        stage ("init") {
+            steps {
+                sh "pwd"
+                sh "bash --version"
+                sh "env"
+            }
+        }
+
+        // https://jenkins.io/doc/book/pipeline/docker/
+        stage ("Main") {
+            agent {
+                docker {
+                    reuseNode true
+                    // !!! IMPORTANT: Not sure why hardcoded name must be used and not variable !!!
+                    // https://stackoverflow.com/questions/53882492/jenkins-how-to-use-variables-inside-agent-docker-args
+                    image 'registry/ansible:0.1.0'
+                }
+            }
+            steps {
+                // Utilise the Jenkins SSH plugin to call into the host where we know Ansible is running. In this case
+                sshagent(['832bd9f4840-4f4e-6a81-8981-aeba9e090']) {
+                    script {
+                        sh "ansible/call-ansible.sh"
+                    }
+                }
+            }
+        }
+    }
+}

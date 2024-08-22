@@ -34,7 +34,32 @@ html_theme_options = {
    "navbar_align": "right",
     "logo": {
         "text": "Marcin Prączko Website",
-    }
+    },
+    "icon_links": [
+        {
+            "name": "GitHub",
+            "url": "https://github.com/marcinpraczko/",
+            "icon": "fa-brands fa-square-github",
+            "type": "fontawesome",
+        },
+        {
+            "name": "LinkedIn",
+            "url": "https://www.linkedin.com/in/marcinpraczko/",
+            "icon": "fa-brands fa-linkedin",
+            "type": "fontawesome",
+        },
+    ],
+    "icon_links_label": "Quick Links",
+    "use_edit_page_button": True,
+    "back_to_top_button": True,
+}
+
+html_context = {
+    "github_url": "https://github.com",
+    "github_user": "marcinpraczko",
+    "github_repo": "marcinpraczko.github.io",
+    "github_version": "main",
+    "doc_path": "website/source",
 }
 
 html_sidebars = {
