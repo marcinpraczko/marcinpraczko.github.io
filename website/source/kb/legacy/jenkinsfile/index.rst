@@ -1,6 +1,6 @@
 .. index::
     pair: kb; legacy
-    pair: legacy, jenkinsfile
+    pair: legacy; jenkinsfile
     pair: jenkinsfile; examples
 
 Jenkinsfile
