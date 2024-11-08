@@ -5,7 +5,11 @@ Overview
     :tutorial_version: 1.0
     :creator: Marcin Prączko
 
-This tutorial will help you understand how to create a simple ``Makefile`` and how to use it to automate tasks.
+This tutorial offers a practical guide on using ``Makefiles`` for task automation.
+It covers creating efficient task dependencies, generating dependency graphs, and writing self-documented Makefiles,
+including both simple and advanced examples. The tutorial aims to make task management more efficient and understandable,
+especially for complex projects with multiple steps.
+
 
 Tutorial Information
 --------------------
