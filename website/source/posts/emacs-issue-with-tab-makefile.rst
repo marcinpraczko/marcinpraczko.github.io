@@ -10,14 +10,14 @@ Emacs TAB Issue in Makefile
    :language: eg
 
 
-Introduction
-------------
+Introduction to Emacs and Makefile TAB Issues
+---------------------------------------------
 
 During work with ``Emacs`` and ``Makefile``, you may encounter an issue with the ``TAB`` key.
 This post will show you how to notice this issue and how to fix it.
 
-Makefile is not running
------------------------
+Why Your Makefile Might Fail to Run
+-----------------------------------
 
 When one is working with shell and runs ``make`` command, one can see following error:
 
@@ -28,8 +28,8 @@ When one is working with shell and runs ``make`` command, one can see following 
 
 Above error is caused by the issue with the ``TAB`` key in the Makefile.
 
-Edit Makefile
--------------
+Editing the Makefile for Compatibility
+--------------------------------------
 
 ``Emacs`` is good editor with built-in support for Makefiles.
 However there is an issue with the ``TAB`` key in the Makefile.
@@ -56,16 +56,16 @@ On the screenshot above, one can see:
 
 This is something which is not easy to notice and can cause issues with running Makefile.
 
-Make whitespace visible
------------------------
+Visualizing Whitespace in Emacs
+-------------------------------
 
 Above points allowed to notice the issue with the ``TAB`` key in the Makefile.
 However ``Emacs`` needs to be configured to show whitespace characters which are not visible by default.
 
 To enable this feature please run following command: ``M-x whitespace-mode``
 
-Fix the issue
--------------
+Steps to Resolve the TAB Issue
+------------------------------
 
 Once the whitespace characters are visible, one can run following commands to fix the issue:
 
@@ -73,13 +73,13 @@ Once the whitespace characters are visible, one can run following commands to fi
 2. Select full buffer: ``M-SPC`` and ``M->``
 3. Run command ``M-x tabify``
 
-Summary
--------
+Final Thoughts on Emacs TAB Fixes
+---------------------------------
 
 This post showed how to notice and fix the issue with the ``TAB`` key in the Makefile when working with ``Emacs``.
 
-Resources
----------
+Additional Resources
+--------------------
 
 .. seealso::
 
