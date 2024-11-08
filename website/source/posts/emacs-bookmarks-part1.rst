@@ -76,18 +76,19 @@ Summary
 -------
 
 This post showed you how to work with bookmarks in ``Emacs``.
-Working with booksmarks can speed up your work and allow you to quickly jump between different locations in the files.
+Working with bookmarks can speed up your work and allow you to quickly jump between different locations in the files.
 
 
 Resources
 ---------
 
-Following resources can be helpful to learn more about bookmarks in `Emacs`:
+Following resources can be helpful to learn more about bookmarks in ``Emacs``:
 
 - `Bookmarks - Emacsdocs <https://emacsdocs.org/docs/emacs/Bookmarks>`_
 - `Bookmarks - EmacsWiki <https://www.emacswiki.org/emacs/BookMarks>`_
 - `Bookmarks - GNU Emacs Manual <https://www.gnu.org/software/emacs/manual/html_node/emacs/Bookmarks.html>`_
 
-Following resources points to some alterantive packages that can be used to manage bookmarks in `Emacs`:
+Following resources point to some alternative packages that can be used to manage bookmarks in ``Emacs``:
+
 
 - `Bookmark+ - EmacsWiki <https://www.emacswiki.org/emacs/Bookmark%2b>`_
