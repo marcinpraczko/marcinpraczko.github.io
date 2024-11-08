@@ -5,17 +5,27 @@ import datetime
 import os
 import shlex
 import subprocess
+import re
 
 from jinja2 import Environment, FileSystemLoader
 
 # Define a list of predefined categories
 PREDEFINED_CATEGORIES = [
-    'Development', 
-    'Editors', 
+    'Development',
+    'Editors',
     'Networking',
-    'Security', 
-    'Sysadmin', 
+    'Security',
+    'Sysadmin',
 ]
+
+def sanitize_title(title):
+    # Replace spaces and underscores with dashes
+    sanitized_title = re.sub(r'[ _]', '-', title)
+    # Check for invalid characters
+    if not re.match(r'^[a-zA-Z0-9-]+$', sanitized_title):
+        print("Error: Title contains invalid characters. Only letters, numbers, spaces, and underscores are allowed.")
+        exit(1)
+    return sanitized_title
 
 def get_git_root():
     try:
@@ -84,7 +94,8 @@ def main():
     print(ctx)
     print("-----END TEMPLATE CONTENT-----")
 
-    post_filename = os.path.join(git_root, 'website', 'source', 'posts', 'new_post.rst')
+    sanitized_title = sanitize_title(title)
+    post_filename = os.path.join(git_root, 'website', 'source', 'posts', f'{sanitized_title}.rst')
 
     print()
     print(f"Rendered template saved as: {post_filename}")

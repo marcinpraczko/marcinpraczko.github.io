@@ -63,4 +63,4 @@ sync-website-to-doc-folder: ## Sync the website build to the docs folder
 .PHONY: create-new-post
 create-new-post: ## Create a new blog post
 		@echo "Creating a new blog post"
-		@python scripts/create-new-post.py
+		@python3 scripts/create-new-post.py
