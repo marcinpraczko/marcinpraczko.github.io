@@ -69,8 +69,9 @@ Fix the issue
 
 Once the whitespace characters are visible, one can run following commands to fix the issue:
 
-1. Move cursor to the beginning of file and run following command: ``M-x untabify``.
-2. Please review file one more time and save it.
+1. Move cursor to the beginning of file ``M-<``
+2. Select full buffer: ``M-SPC`` and ``M->``
+3. Run command ``M-x tabify``
 
 Summary
 -------
