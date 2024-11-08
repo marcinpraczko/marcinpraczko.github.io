@@ -2,7 +2,7 @@ How to Upgrade Kubuntu 23.10 to 24.04
 =====================================
 
 .. post:: Jul 27, 2024
-   :tags: new post, updateme
+   :tags: upgrade, kubuntu
    :category: Sysadmin
    :author: Marcin Prączko
    :language: eg
@@ -50,7 +50,7 @@ Before starting the upgrade process, I had to face with some challenges:
 
 - I knew that my root partition can have not enough free space.
 
-I had root partition with ``20GB`` and only ``2GB`` free space. This was not enough for the upgrade process. 
+I had root partition with ``20GB`` and only ``2GB`` free space. This was not enough for the upgrade process.
 Reason of so small root partition was that I have separate partition for major folders like ``/home``, ``/usr``.
 
 Long time ago I've decided to have separate partitions for major folders based on my experience and recommendations from the internet.
@@ -145,7 +145,7 @@ What was a suprise for me that the ``/var/lib/snapd/`` folder was using more tha
 
 .. hint::
 
-  - Snap is a software deployment and package management system for Linux. 
+  - Snap is a software deployment and package management system for Linux.
     It allows you to install and manage applications in a sandboxed environment called a snap.
   - Snap packages are self-contained and work across a range of Linux distributions.
     They are easy to install, secure, and up-to-date.
@@ -219,7 +219,7 @@ After collecting enough documents and installing required software, I was ready 
   # Switch to run-level 3
   sudo systemctl isolate multi-user.target
 
-  # ... 
+  # ...
   # When got console - I've login with my account
   who -r
   # >> run-level 3
@@ -244,7 +244,7 @@ I wanted be sure that working with ``Links`` is possible, so I've tried to open 
 .. tip::
 
   ``multi-user.target`` - This is a systemd target that sets up a non-graphical multi-user environment.
-  It is similar to runlevel 3 in SysV init systems, where the system operates in a multi-user mode with 
+  It is similar to runlevel 3 in SysV init systems, where the system operates in a multi-user mode with
   networking but without a graphical interface.
 
   - Above information comes from ``Chat GPT`` when asked about ``multi-user.target``.
@@ -409,7 +409,7 @@ So now.. that was the most scary part - rebooting the system after upgrade (no e
 System upgraded - welcome to Kubuntu 24.04
 ------------------------------------------
 
-Lucky for me - after rebooting the system, everything was working fine. :) 
+Lucky for me - after rebooting the system, everything was working fine. :)
 
 And following is result from the ``neofetch`` command:
 
@@ -436,7 +436,7 @@ However following are minor issues which I've noticed:
 - Python ``venv`` stopped working
 
   - In some projects I needed to recreate python virutal environments (venv)
-  
+
     - they stopped working
     - re-sourcing venv ``source venv/bin/activate`` - not worked
 

@@ -37,7 +37,7 @@ When one will try run this Makefile, it will fail with the following error:
 
 .. code-block:: bash
 
-    $ make -f Makefile_wrong_formatting  
+    $ make -f Makefile_wrong_formatting
     Makefile_wrong_formatting:9: *** missing separator.  Stop.
 
 Displaying whitespace characters
@@ -86,6 +86,9 @@ This can be done by running ``M-x whitespace-mode`` command.
 
 .. image:: img-02.png
 
+.. seealso::
+
+    - :ref:`emacs_makefile_tab_issue`
 
 Displaying whitespace characters in Vscode
 ++++++++++++++++++++++++++++++++++++++++++
