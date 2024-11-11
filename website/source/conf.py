@@ -7,6 +7,7 @@
 # https://www.sphinx-doc.org/en/master/usage/configuration.html#project-information
 
 project = 'Marcin Prączko website'
+html_title = 'Marcin Prączko website'
 copyright = '2024, Marcin Prączko'
 author = 'Marcin Prączko'
 release = '0.1.0'
@@ -18,7 +19,7 @@ extensions = [
     "ablog",
     "sphinx_panels",
     "sphinx_tabs.tabs",
-    "sphinx.ext.githubpages", 
+    "sphinx.ext.githubpages",
     "sphinx.ext.intersphinx",
     "sphinx.ext.todo",
 ]
