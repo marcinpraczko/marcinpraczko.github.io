@@ -30,6 +30,13 @@ html_static_path = ['_static']
 # -- PyData theme and ABLOG --
 post_auto_image = 1
 
+# https://ablog.readthedocs.io/en/stable/manual/ablog-configuration-options.html
+blog_path = "blog"
+blog_baseurl = "https://marcinpraczko.info/"
+# blog_feed_fulltext = True  # Include full text in the RSS feed
+# blog_feed_archives = True  # Include archive pages in the feed
+
+
 html_theme_options = {
    "navigation_with_keys": False,
    "navbar_align": "right",
@@ -48,6 +55,11 @@ html_theme_options = {
             "url": "https://www.linkedin.com/in/marcinpraczko/",
             "icon": "fa-brands fa-linkedin",
             "type": "fontawesome",
+        },
+        {
+            "name": "RSS",
+            "url": "https://marcinpraczko.info/blog/atom.xml",
+            "icon": "fas fa-rss",
         },
     ],
     "icon_links_label": "Quick Links",
