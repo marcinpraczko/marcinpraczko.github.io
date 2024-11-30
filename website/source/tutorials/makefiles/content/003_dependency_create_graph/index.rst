@@ -82,7 +82,7 @@ Also one can install ``make2graph`` and ``graphviz`` by using following command:
 
       .. code-block:: bash
 
-         sudo apt-get install make2graph graphviz
+         sudo apt-get install makefile2graph graphviz
 
 Create graph
 ++++++++++++
