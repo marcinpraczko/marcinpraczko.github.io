@@ -9,47 +9,68 @@ permissions:
   contents: read
 
 jobs:
-  build:
-    runs-on: ${{ matrix.os }}
-
-    strategy:
-      matrix:
-        os: [ubuntu-latest, macos-latest, windows-latest]
+  build-ubuntu:
+    runs-on: ubuntu-latest
 
     steps:
     - uses: actions/checkout@v4
 
     - name: "Update packages"
-      if: matrix.os == 'ubuntu-latest'
       run: |
         sudo apt-get update
 
-    - name: "make: Install on Ubuntu"
-      if: matrix.os == 'ubuntu-latest'
+    - name: "Install: make"
       run: |
         sudo apt-get install -y make
         make --version
 
-    - name: "makefile2graph: Install on Ubuntu"
-      if: matrix.os == 'ubuntu-latest'
+    - name: "Install: makefile2graph"
       run: |
         sudo apt-get install -y makefile2graph
         dpkg -l makefile2graph
 
-    - name: "graphviz: Install on Ubuntu"
-      if: matrix.os == 'ubuntu-latest'
+    - name: "Install: graphviz"
       run: |
         sudo apt-get install -y graphviz
-        dpkg -l graphviz
+        dot -V
 
-    - name: Install make on macOS
-      if: matrix.os == 'macos-latest'
+  build-macos:
+    runs-on: macos-latest
+
+    steps:
+    - uses: actions/checkout@v4
+
+    - name: "Install: make"
       run: |
         brew install make
         make --version
 
-    - name: Install make on Windows
-      if: matrix.os == 'windows-latest'
+    - name: "Install: makefile2graph"
+      run: |
+        brew install makefile2graph
+
+    - name: "Install: graphviz"
+      run: |
+        brew install graphviz
+        dot -V
+
+  build-windows:
+    runs-on: windows-latest
+
+    steps:
+    - uses: actions/checkout@v4
+
+    - name: "Install: make"
       run: |
         choco install make
         make --version
+
+#   TODO: Not exists :(
+#    - name: "Install: makefile2graph"
+#      run: |
+#        choco install makefile2graph
+
+    - name: "Install: graphviz"
+      run: |
+        choco install graphviz
+        dot -V
