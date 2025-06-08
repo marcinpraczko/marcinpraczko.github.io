@@ -24,10 +24,7 @@ def sanitize_title(title):
     # Check for invalid characters
     if not re.match(r'^[a-zA-Z0-9-]+$', sanitized_title):
         print("Error: Title contains invalid characters. Only letters, numbers, spaces, and underscores are allowed.")
-        exit(1)
-    return sanitized_title
-
-def get_git_root():
+        exit(1)def get_git_root():
     try:
         git_root_cmd = 'git rev-parse --show-toplevel'
         git_root_args = shlex.split(git_root_cmd)
@@ -36,6 +33,9 @@ def get_git_root():
     except subprocess.CalledProcessError:
         print("Error: Not in a git repository.")
         exit(1)
+    return sanitized_title
+
+
 
 def render_template(git_root, title, date, tags, category, author, language, content):
     template_path = os.path.join(git_root, 'templates', 'posts')

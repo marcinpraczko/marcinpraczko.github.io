@@ -20,21 +20,54 @@ to DevOps and DevSecOps principles and processes.
 Get ready to immerse yourself in a world where learning meets enjoyment, and efficiency meets exploration.
 Let's embark on this exciting journey together!
 
+Testing solutions
+-----------------
+    
+.. warning::
+
+    !!! Major Table of content has been replaced with panels !!!
+
+.. toctree::
+   :maxdepth: 1
+   :caption: Testing
+
+   test_drafts_review/index
+
+
 General section
 ---------------
 
-This is general section - with context - would be nice if this can be display as main page.
-And blog as separate page.
+.. panels::
 
-.. toctree::
-   :maxdepth: 2
-   :caption: Main section:
+    .. toctree::
+       :maxdepth: 1
+       :caption: Generative AI
 
-   generic/genai
-   tutorials/tutorials
-   kb/index
-   generic/aboutme
+       genai/index
 
+    ---
+
+    .. toctree::
+       :maxdepth: 2
+       :caption: Tutorials
+
+       tutorials/tutorials
+
+    ---
+
+    .. toctree::
+       :maxdepth: 2
+       :caption: Knowledge Base
+
+       kb/index
+
+    ---
+
+    .. toctree::
+       :maxdepth: 2
+       :caption: About Me
+
+       generic/aboutme
 
 Blog
 ----
@@ -52,7 +85,6 @@ Blog - Last 5 posts
    :date: %Y-%m-%d
    :format: {date} - {title}
    :list-style: circle
-
 
 Indexes and search
 ------------------

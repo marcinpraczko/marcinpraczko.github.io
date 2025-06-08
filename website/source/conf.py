@@ -80,7 +80,7 @@ html_sidebars = {
    'blog/*': ['ablog/postcard.html', 'ablog/recentposts.html',
                'ablog/tagcloud.html', 'ablog/categories.html',
                'ablog/archives.html', ],
-   'posts/*': ['ablog/postcard.html', 'ablog/recentposts.html',
+   'posts/**': ['ablog/postcard.html', 'ablog/recentposts.html',
                'ablog/tagcloud.html', 'ablog/categories.html',
                'ablog/archives.html', ],
 }
