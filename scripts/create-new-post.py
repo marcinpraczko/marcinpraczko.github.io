@@ -24,7 +24,9 @@ def sanitize_title(title):
     # Check for invalid characters
     if not re.match(r'^[a-zA-Z0-9-]+$', sanitized_title):
         print("Error: Title contains invalid characters. Only letters, numbers, spaces, and underscores are allowed.")
-        exit(1)def get_git_root():
+        exit(1)
+
+def get_git_root():
     try:
         git_root_cmd = 'git rev-parse --show-toplevel'
         git_root_args = shlex.split(git_root_cmd)
