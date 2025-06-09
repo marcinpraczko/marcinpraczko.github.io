@@ -18,6 +18,7 @@ PREDEFINED_CATEGORIES = [
     'Sysadmin',
 ]
 
+
 def sanitize_title(title):
     # Replace spaces and underscores with dashes
     sanitized_title = re.sub(r'[ _]', '-', title)
@@ -25,6 +26,8 @@ def sanitize_title(title):
     if not re.match(r'^[a-zA-Z0-9-]+$', sanitized_title):
         print("Error: Title contains invalid characters. Only letters, numbers, spaces, and underscores are allowed.")
         exit(1)
+    return sanitized_title
+
 
 def get_git_root():
     try:
@@ -35,8 +38,6 @@ def get_git_root():
     except subprocess.CalledProcessError:
         print("Error: Not in a git repository.")
         exit(1)
-    return sanitized_title
-
 
 
 def render_template(git_root, title, date, tags, category, author, language, content):
@@ -68,6 +69,7 @@ def select_category():
     except ValueError:
         print("Invalid choice. Please enter a valid number.")
         return select_category()
+
 
 def main():
     git_root = get_git_root()
@@ -106,7 +108,8 @@ def main():
             message.write(ctx)
     else:
         print(f"WARNING: File exist: {post_filename}")
-        print(f"WARNING: Please rename the file or remove the existing file.")
+        print("WARNING: Please rename the file or remove the existing file.")
+
 
 if __name__ == "__main__":
     main()
