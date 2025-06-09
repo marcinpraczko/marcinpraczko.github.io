@@ -20,7 +20,7 @@ One day I needed to document a project that involved complex Graphviz ``DOT`` di
 I decided to automate the workflow using a combination of ``Makefile``, ``shell scripts``, and ``Sphinx-doc``. 
 The goal was to create a seamless experience where adding or removing ``DOT`` files would automatically update the ``SVGs`` and documentation.
 
-Of course I used `GitHub Copilot`_ to help me with the code snippets. Once final project did work I created a set of prompts to help others replicate the process easily.
+Of course I used ``GitHub Copilot`` to help me with the code snippets. Once final project did work I created a set of prompts to help others replicate the process easily.
 
 
 Prompts
@@ -86,9 +86,10 @@ Prompt 3: Final Workspace Review
 References
 ----------
 
-.. _DOT: https://graphviz.org/doc/info/lang.html
-.. _GitHub Copilot: https://github.com/features/copilot
-.. _make: https://www.gnu.org/software/make/
-.. _OpenAI Model GPT-4.1: https://openai.com/index/gpt-4-1/
-.. _OpenAI Models: https://platform.openai.com/docs/models
-.. _SVG: https://developer.mozilla.org/docs/Web/SVG
+- `GitHub Copilot <https://github.com/features/copilot>`__
+- `OpenAI Model GPT-4.1 <https://openai.com/index/gpt-4-1/>`__
+- `OpenAI Models <https://platform.openai.com/docs/models>`__
+
+- `Graphviz - dot <https://graphviz.org/doc/info/lang.html>`__
+- `make <https://www.gnu.org/software/make/>`__
+- `SVG <https://developer.mozilla.org/docs/Web/SVG>`__
