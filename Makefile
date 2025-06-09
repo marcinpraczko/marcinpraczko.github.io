@@ -28,6 +28,7 @@ help:: ## Help: Show this help text
 ##
 ## Development
 ##
+
 pip-update-all: ## Update pip and requirements.txt
 pip-update-all: pip-update-pip pip-install-dependencies
 
@@ -42,6 +43,22 @@ pip-update-pip: ## Update pip package
 pip-install-dependencies: ## Install PIP dependencies
 		@echo "Installing dependencies"
 		pip install -r requirements.txt
+
+.PHONY: pip-install-linters
+pip-install-linters: ## Install linters (flake8, pylint, mypy)
+		@echo "Installing linters"
+		pip install flake8 pytest
+
+.PHONY: run-validation
+run-validation:  ## Run flake8 lint checks
+# stop the build if there are Python syntax errors or undefined names
+		flake8 . --exclude=.venv,website \
+			--count --select=E9,F63,F7,F82 \
+			--show-source --statistics
+# exit-zero treats all errors as warnings. The GitHub editor is 127 chars wide
+		flake8 . --exclude=.venv,website \
+			--count --exit-zero --max-complexity=10 \
+			--max-line-length=127 --statistics
 
 ##
 ## Publishing
