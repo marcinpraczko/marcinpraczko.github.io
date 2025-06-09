@@ -28,6 +28,7 @@ help:: ## Help: Show this help text
 ##
 ## Development
 ##
+
 pip-update-all: ## Update pip and requirements.txt
 pip-update-all: pip-update-pip pip-install-dependencies
 
