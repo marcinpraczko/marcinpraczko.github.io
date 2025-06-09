@@ -30,4 +30,4 @@ Additional resources
     :caption: Table of Contents
 
    resources
-   genai_prompts
+   prompts/001_simple_app_for_sphinxdoc

@@ -8,9 +8,9 @@
 
 project = 'Marcin Prączko website'
 html_title = 'Marcin Prączko website'
-copyright = '2024, Marcin Prączko'
+copyright = '2024-2025, Marcin Prączko'
 author = 'Marcin Prączko'
-release = '0.1.0'
+release = '2025/06/09'
 
 # -- General configuration ---------------------------------------------------
 # https://www.sphinx-doc.org/en/master/usage/configuration.html#general-configuration
