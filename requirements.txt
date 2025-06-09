@@ -14,11 +14,13 @@ Jinja2==3.1.6
 lxml==5.2.2
 MarkupSafe==2.1.5
 packaging==24.1
-pydata-sphinx-theme==0.15.4
+pip-check==2.9
+pydata-sphinx-theme==0.16.1
 Pygments==2.18.0
 python-dateutil==2.8.2
 requests==2.32.3
-setuptools==72.1.0
+roman-numerals-py==3.1.0
+setuptools==80.9.0
 six==1.16.0
 snowballstemmer==2.2.0
 soupsieve==2.5
@@ -31,7 +33,8 @@ sphinxcontrib-htmlhelp==2.0.4
 sphinxcontrib-jsmath==1.0.1
 sphinxcontrib-qthelp==1.0.6
 sphinxcontrib-serializinghtml==1.1.9
+terminaltables==3.1.10
 typing_extensions==4.12.2
-urllib3==2.2.2
-watchdog==4.0.1
-zipp==3.19.2
+urllib3==2.4.0
+watchdog==6.0.0
+zipp==3.23.0

@@ -1,10 +1,15 @@
 *~
-venv/
+__pycache__/
+
+_website/
+
+.doctrees/
+.idea/
+.venv/
+
 build/doctrees/
 build/html/
-.doctrees/
-__pycache__/
-_website/
+venv/
 
 /website/build/
 /website/source/to_review/

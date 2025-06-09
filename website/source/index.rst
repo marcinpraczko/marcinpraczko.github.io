@@ -20,39 +20,59 @@ to DevOps and DevSecOps principles and processes.
 Get ready to immerse yourself in a world where learning meets enjoyment, and efficiency meets exploration.
 Let's embark on this exciting journey together!
 
+
 General section
 ---------------
 
-This is general section - with context - would be nice if this can be display as main page.
-And blog as separate page.
+.. panels::
 
-.. toctree::
-   :maxdepth: 2
-   :caption: Main section:
+    .. toctree::
+       :maxdepth: 1
+       :caption: Generative AI
 
-   generic/genai
-   tutorials/tutorials
-   kb/index
-   generic/aboutme
+       genai/index
 
+    ---
 
-Blog
-----
+    .. toctree::
+       :maxdepth: 2
+       :caption: Tutorials
 
-.. toctree::
-   :maxdepth: 2
+       tutorials/tutorials
 
-   blog/index
+    ---
+
+    .. toctree::
+       :maxdepth: 2
+       :caption: Knowledge Base
+
+       kb/index
+
+    ---
+
+    .. toctree::
+       :maxdepth: 2
+       :caption: About Me
+
+       generic/aboutme
+
+    ---
+
+    .. toctree::
+       :maxdepth: 2
+       :caption: Blog
+
+       blog/index
+
 
 Blog - Last 5 posts
-+++++++++++++++++++
+-------------------
 
 .. postlist:: 5
    :author: marcinpraczko
    :date: %Y-%m-%d
    :format: {date} - {title}
    :list-style: circle
-
 
 Indexes and search
 ------------------
