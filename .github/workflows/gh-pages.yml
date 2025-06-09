@@ -4,8 +4,6 @@ on:
   push:
     branches:
       - '*'
-    paths:
-      - 'website/source/**'
 
 # Sets permissions of the GITHUB_TOKEN to allow deployment to GitHub Pages
 permissions:
@@ -20,6 +18,21 @@ concurrency:
   cancel-in-progress: false
 
 jobs:
+  lint:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Set up Python 3.11
+        uses: actions/setup-python@v3
+        with:
+          python-version: "3.11"
+
+      - name: Lint with flake8
+        run: |
+          make pip-update-pip pip-install-dependencies pip-install-linters run-validation
+
   # Build job
   build:
     runs-on: ubuntu-latest
@@ -27,6 +40,7 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v4
+
       - name: Setup Pages
         uses: actions/configure-pages@v5
 
@@ -39,11 +53,6 @@ jobs:
         run: |
           python -m pip install --upgrade pip
           if [ -f requirements.txt ]; then pip install -r requirements.txt; fi
-
-      - name: Lint with flake8
-        run: |
-          pip install flake8 pytest
-          make run-validation
 
       - name: Build documentation
         run: |
