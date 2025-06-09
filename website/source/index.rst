@@ -20,19 +20,6 @@ to DevOps and DevSecOps principles and processes.
 Get ready to immerse yourself in a world where learning meets enjoyment, and efficiency meets exploration.
 Let's embark on this exciting journey together!
 
-Testing solutions
------------------
-    
-.. warning::
-
-    !!! Major Table of content has been replaced with panels !!!
-
-.. toctree::
-   :maxdepth: 1
-   :caption: Testing
-
-   test_drafts_review/index
-
 
 General section
 ---------------
@@ -69,16 +56,17 @@ General section
 
        generic/aboutme
 
-Blog
-----
+    ---
 
-.. toctree::
-   :maxdepth: 2
+    .. toctree::
+       :maxdepth: 2
+       :caption: Blog
 
-   blog/index
+       blog/index
+
 
 Blog - Last 5 posts
-+++++++++++++++++++
+-------------------
 
 .. postlist:: 5
    :author: marcinpraczko
