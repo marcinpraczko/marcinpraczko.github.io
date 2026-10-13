@@ -1,3 +1,8 @@
+.. important::
+
+   This project has been migrated to `GitLab <https://gitlab.com/marcinpraczko/marcinpraczko.gitlab.io>`_.
+   This GitHub repository will no longer be used in 2027.
+
 Marcin Praczko main website
 ===========================
 
@@ -59,14 +64,7 @@ The project uses a ``Makefile`` to automate common tasks:
 Publishing
 ----------
 
-Publishing to GitHub Pages is automated via GitHub Actions.
-See [.github/workflows/gh-pages.yml](.github/workflows/gh-pages.yml) for details.
-
-- On every push to any branch (affecting `website/source/**`), the workflow:
-  - Installs dependencies and linters using Makefile targets
-  - Runs code validation
-  - Builds the documentation (`make -C website html`)
-  - Uploads the generated site to GitHub Pages (on `main` branch)
+The project has been migrated to `GitLab <https://gitlab.com/marcinpraczko/marcinpraczko.gitlab.io>`_.
 
 Resources
 ---------
@@ -80,4 +78,3 @@ Following pages helped me to create this website:
 - https://python.plainenglish.io/building-a-personal-blog-with-python-and-sphinx-45f9794869a4
 
 I've mixed between last two - however probably last is the one which I like.
-
